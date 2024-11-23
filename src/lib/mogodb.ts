@@ -6,8 +6,15 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
 }
 
+// Define a type for the mongoose cache
+interface MongooseCache {
+  conn: mongoose.Connection | null;
+  promise: Promise<mongoose.Connection> | null;
+}
+
 declare global {
-  var mongoose: { conn: any; promise: any } | undefined;
+  // eslint-disable-next-line no-var
+  var mongoose: MongooseCache | undefined;
 }
 
 let cached = global.mongoose;
@@ -16,9 +23,9 @@ if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-const mongooseCache = cached as { conn: any; promise: any };
+const mongooseCache = cached as MongooseCache;
 
-export async function connectToDatabase() {
+export async function connectToDatabase(): Promise<mongoose.Connection> {
   if (mongooseCache.conn) {
     return mongooseCache.conn;
   }
@@ -27,7 +34,7 @@ export async function connectToDatabase() {
     const opts = {
       dbName: 'MerryChristmas',
     };
-    mongooseCache.promise = mongoose.connect(MONGODB_URI, opts);
+    mongooseCache.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => mongoose.connection);
   }
   mongooseCache.conn = await mongooseCache.promise;
   return mongooseCache.conn;

@@ -21,7 +21,7 @@ export default function CreatePage() {
   const [linkedInUrl, setLinkedInUrl] = useState('');
   const [isLoadingProfile, setIsLoadingProfile] = useState(false);
   const [isCreatingCard, setIsCreatingCard] = useState(false);
-  const [cardId, setCardId] = useState<number | null>(null);
+  const [cardId] = useState<number | null>(null);
   const [profileData, setProfileData] = useState<ProfileData | null>(null);
   const [showProfileDialog, setShowProfileDialog] = useState(false);
   const [error, setError] = useState<string | null>(null);

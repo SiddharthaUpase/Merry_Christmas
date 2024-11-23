@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-import * as fs from 'fs';
-import path from 'path';
 import { fetchLinkedInProfile } from '@/lib/api/linkedin';
 
 export async function POST(request: Request) {
