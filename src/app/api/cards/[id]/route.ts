@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
+import { NextRequest } from 'next/server';
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
