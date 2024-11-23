@@ -1,0 +1,532 @@
+{
+  "id": 474581553,
+  "urn": "ACoAABxJijEB2EETSzbgqZd7LXLdPYSZOqMZ5as",
+  "username": "chandru-pramoda2",
+  "firstName": "Pramoda",
+  "lastName": "Chandru",
+  "isCreator": false,
+  "isOpenToWork": true,
+  "isHiring": false,
+  "profilePicture": "https://media.licdn.com/dms/image/v2/D5603AQG2HMkIRW5bEg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705200261556?e=1737590400&v=beta&t=dtHg2UFZd6ecTbCyX69Uno5NjdhmPNyU2DqoGJmT_3A",
+  "backgroundImage": [
+    {
+      "width": 799,
+      "height": 200,
+      "url": "https://media.licdn.com/dms/image/v2/D4D16AQH4xiEAXoHJAQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1679288771458?e=1737590400&v=beta&t=n9Fd9FVmvz1PB_MMenbd_PEzMk2nqazfyTDGTar949o"
+    },
+    {
+      "width": 1400,
+      "height": 350,
+      "url": "https://media.licdn.com/dms/image/v2/D4D16AQH4xiEAXoHJAQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1679288771458?e=1737590400&v=beta&t=ujHjkAT6o7Fy5A8eh2cVwQDGE3kidXCNs_-gLO9uWv0"
+    }
+  ],
+  "summary": "Highly motivated and results-oriented Software Engineer with over 7 years of experience in full-stack development, automation frameworks, and project management.\nI am seeking new opportunities to apply my skills and expertise in a challenging and dynamic environment. Feel free to connect with me to discuss potential collaborations, projects, or opportunities.",
+  "headline": "Software Development Intern at Dassault Systemes  | Actively Seeking Full time Opportunities for Spring 25'  | MS in Computer Science",
+  "geo": {
+    "country": "United States",
+    "city": "Chicago, Illinois",
+    "full": "Chicago, Illinois, United States"
+  },
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    },
+    {
+      "name": "Kannada",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    }
+  ],
+  "educations": [
+    {
+      "start": {
+        "year": 2023,
+        "month": 1,
+        "day": 0
+      },
+      "end": {
+        "year": 2024,
+        "month": 12,
+        "day": 0
+      },
+      "fieldOfStudy": "Computer Science",
+      "degree": "Master's degree",
+      "grade": "",
+      "schoolName": "Illinois Institute of Technology",
+      "description": "",
+      "activities": "",
+      "url": "https://www.linkedin.com/school/illinois-tech/",
+      "schoolId": "6328"
+    },
+    {
+      "start": {
+        "year": 2010,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 2014,
+        "month": 0,
+        "day": 0
+      },
+      "fieldOfStudy": "Information Technology",
+      "degree": "Bachelor of Engineering - BE",
+      "grade": "",
+      "schoolName": "Visvesvaraya Technological University",
+      "description": "",
+      "activities": "",
+      "url": "https://www.linkedin.com/school/visvesvaraya-technological-university/",
+      "schoolId": "8680105"
+    }
+  ],
+  "position": [
+    {
+      "companyId": 3896,
+      "companyName": "Dassault Systèmes",
+      "companyUsername": "dassaultsystemes",
+      "companyURL": "https://www.linkedin.com/company/dassaultsystemes/",
+      "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQHroRzeNTva6Q/company-logo_400_400/company-logo_400_400/0/1631330934922?e=1740614400&v=beta&t=0YCA4B863Yp-PcG6iUzHGjQGFjW2IukPEfPTR5PP4HU",
+      "companyIndustry": "Computer Software",
+      "companyStaffCountRange": "10001+",
+      "title": "Software Development Intern",
+      "multiLocaleTitle": {
+        "en_US": "Software Development Intern"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Dassault Systèmes"
+      },
+      "location": "Shelton, Connecticut, United States",
+      "description": "•Designed and implemented an MFE grid view using Angular and AgGrid, enhancing multi-formula editing capabilities and reducing development time for product variations by 60%.\n•Created data validation for multi-formula editing with Java and Spring Boot, improving product reliability by 40% through rigorous checks on roles and recipe statuses.\n•Collaborated with multi-geo teams, including Development, Product Management, Architects, and QA, ensuring alignment with product specifications, and achieved 85% code coverage using Jasmine and JUnit.",
+      "employmentType": "Internship",
+      "start": {
+        "year": 2024,
+        "month": 5,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    },
+    {
+      "companyId": 51681538,
+      "companyName": "Dassault Systemes Solutions Lab",
+      "companyUsername": "3dindialab",
+      "companyURL": "https://www.linkedin.com/company/3dindialab/",
+      "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQG3GVJJLBbjyQ/company-logo_400_400/company-logo_400_400/0/1692687152345/3dindialab_logo?e=1740614400&v=beta&t=s3OG4l4jM5wGaAwJ2Lbm-SbY2EutZxXbAShO23oPG_I",
+      "companyIndustry": "Computer Software",
+      "companyStaffCountRange": "1001 - 5000",
+      "title": "Software Engineer",
+      "multiLocaleTitle": {
+        "en_US": "Software Engineer"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Dassault Systemes Solutions Lab"
+      },
+      "location": "Bengaluru, Karnataka, India",
+      "description": "Formulation Development Team\n•Engineered interactive frontend components using Angular and NgRx, resulting in a 25% improvement in user interaction speed and enhanced application responsiveness.\n•Led a team of 4 to implement a feature for copying and pasting formula rows within and across formulas, completing the task in one month.\n•Architected a collections framework for recipes, enhancing privacy and visibility while streamlining maintenance and reducing data errors.\n•Developed and documented over 100 APIs, ensuring seamless data synchronization between cloud and on-premises systems, which enhanced integration and data consistency.\n•Participated in Agile ceremonies including sprint planning, daily stand-ups, sprint reviews, and retrospectives to ensure project goals alignment.\n•Conducted regular code reviews, ensuring adherence to coding standards and best practices, leading to a 20% reduction in bugs and improved overall code quality.\n\nEnovia Enginuity Team \n•Optimized material connections in the formulation BOM, reducing material search time by 35%.\n•Orchestrated a security context framework development, simplifying formula management and driving a $2 million increase in customer licensing revenue.\n•Integrated Raw Material sub-types with customizable attributes and validation rules, reducing data entry time by 70% for customers.\n•Identified and resolved critical bugs and performance issues, leading to a 20% increase in application stability and responsiveness.",
+      "employmentType": "Full-time",
+      "start": {
+        "year": 2015,
+        "month": 2,
+        "day": 0
+      },
+      "end": {
+        "year": 2023,
+        "month": 1,
+        "day": 0
+      }
+    }
+  ],
+  "fullPositions": [
+    {
+      "companyId": 3896,
+      "companyName": "Dassault Systèmes",
+      "companyUsername": "dassaultsystemes",
+      "companyURL": "https://www.linkedin.com/company/dassaultsystemes/",
+      "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQHroRzeNTva6Q/company-logo_400_400/company-logo_400_400/0/1631330934922?e=1740614400&v=beta&t=0YCA4B863Yp-PcG6iUzHGjQGFjW2IukPEfPTR5PP4HU",
+      "companyIndustry": "Computer Software",
+      "companyStaffCountRange": "10001+",
+      "title": "Software Development Intern",
+      "multiLocaleTitle": {
+        "en_US": "Software Development Intern"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Dassault Systèmes"
+      },
+      "location": "Shelton, Connecticut, United States",
+      "description": "•Designed and implemented an MFE grid view using Angular and AgGrid, enhancing multi-formula editing capabilities and reducing development time for product variations by 60%.\n•Created data validation for multi-formula editing with Java and Spring Boot, improving product reliability by 40% through rigorous checks on roles and recipe statuses.\n•Collaborated with multi-geo teams, including Development, Product Management, Architects, and QA, ensuring alignment with product specifications, and achieved 85% code coverage using Jasmine and JUnit.",
+      "employmentType": "Internship",
+      "start": {
+        "year": 2024,
+        "month": 5,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    },
+    {
+      "companyId": 51681538,
+      "companyName": "Dassault Systemes Solutions Lab",
+      "companyUsername": "3dindialab",
+      "companyURL": "https://www.linkedin.com/company/3dindialab/",
+      "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQG3GVJJLBbjyQ/company-logo_400_400/company-logo_400_400/0/1692687152345/3dindialab_logo?e=1740614400&v=beta&t=s3OG4l4jM5wGaAwJ2Lbm-SbY2EutZxXbAShO23oPG_I",
+      "companyIndustry": "Computer Software",
+      "companyStaffCountRange": "1001 - 5000",
+      "title": "Software Engineer",
+      "multiLocaleTitle": {
+        "en_US": "Software Engineer"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Dassault Systemes Solutions Lab"
+      },
+      "location": "Bengaluru, Karnataka, India",
+      "description": "Formulation Development Team\n•Engineered interactive frontend components using Angular and NgRx, resulting in a 25% improvement in user interaction speed and enhanced application responsiveness.\n•Led a team of 4 to implement a feature for copying and pasting formula rows within and across formulas, completing the task in one month.\n•Architected a collections framework for recipes, enhancing privacy and visibility while streamlining maintenance and reducing data errors.\n•Developed and documented over 100 APIs, ensuring seamless data synchronization between cloud and on-premises systems, which enhanced integration and data consistency.\n•Participated in Agile ceremonies including sprint planning, daily stand-ups, sprint reviews, and retrospectives to ensure project goals alignment.\n•Conducted regular code reviews, ensuring adherence to coding standards and best practices, leading to a 20% reduction in bugs and improved overall code quality.\n\nEnovia Enginuity Team \n•Optimized material connections in the formulation BOM, reducing material search time by 35%.\n•Orchestrated a security context framework development, simplifying formula management and driving a $2 million increase in customer licensing revenue.\n•Integrated Raw Material sub-types with customizable attributes and validation rules, reducing data entry time by 70% for customers.\n•Identified and resolved critical bugs and performance issues, leading to a 20% increase in application stability and responsiveness.",
+      "employmentType": "Full-time",
+      "start": {
+        "year": 2015,
+        "month": 2,
+        "day": 0
+      },
+      "end": {
+        "year": 2023,
+        "month": 1,
+        "day": 0
+      }
+    }
+  ],
+  "skills": [
+    {
+      "name": "Communication",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Apache Kafka",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Test Driven Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Test-Driven Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Continuous Integration and Continuous Delivery (CI/CD)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "AgGrid",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Lodash.js",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Test Planning",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Test Design",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Oracle Database",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "UFT",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Software Quality Assurance",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Software Testing Life Cycle (STLC)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Software Testing",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Manual Testing",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "REST Assured",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "API Testing",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "TypeScript",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "NgRx",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Software Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Software Development Life Cycle (SDLC)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Agile Methodologies",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Unit Testing",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "API Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Selenium",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Groovy",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Geb",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Software Project Management",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Spock Framework",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Cucumber",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "TestNG",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Batch Files",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Jenkins",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Test Automation",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Front-End Design",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Visual Studio",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Research and Development (R&D)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Model-View-Controller (MVC)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "User Stories",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "JavaServer Pages (JSP)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Agile Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Java Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Linux",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Python (Programming Language)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Web Development",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "React",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "JUnit",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Teamwork",
+      "passedSkillAssessment": false
+    },
+    {
+      "name": "Multithreading",
+      "passedSkillAssessment": false
+    }
+  ],
+  "givenRecommendation": null,
+  "givenRecommendationCount": 0,
+  "receivedRecommendation": null,
+  "receivedRecommendationCount": 0,
+  "courses": null,
+  "certifications": [
+    {
+      "name": "Dassault Systemes certified JavaScript Developer ",
+      "start": {
+        "year": 2022,
+        "month": 7,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      },
+      "authority": "Dassault Systèmes",
+      "company": {
+        "name": "Dassault Systèmes",
+        "universalName": "dassaultsystemes",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQHroRzeNTva6Q/company-logo_200_200/company-logo_200_200/0/1631330934922?e=1740614400&v=beta&t=Mab71qjCkvn0kRjGvl-DxDkH9kbG3GukNe_lxtgM_iE",
+        "staffCountRange": {},
+        "headquarter": {}
+      },
+      "timePeriod": {
+        "start": {
+          "year": 0,
+          "month": 0,
+          "day": 0
+        },
+        "end": {
+          "year": 0,
+          "month": 0,
+          "day": 0
+        }
+      }
+    },
+    {
+      "name": "Oracle Certified Associate, Java SE 8 Programmer",
+      "start": {
+        "year": 2020,
+        "month": 6,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      },
+      "authority": "Oracle",
+      "company": {
+        "name": "Oracle",
+        "universalName": "oracle",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_200_200/company-logo_200_200/0/1665755678957/oracle_logo?e=1740614400&v=beta&t=kCPbHakzCqPBm-h93GFS_sAnTCZQMDssXVuh8GaHTXE",
+        "staffCountRange": {},
+        "headquarter": {}
+      },
+      "timePeriod": {
+        "start": {
+          "year": 0,
+          "month": 0,
+          "day": 0
+        },
+        "end": {
+          "year": 0,
+          "month": 0,
+          "day": 0
+        }
+      }
+    },
+    {
+      "name": "ISTQB - International Software Testing Qualifications Board",
+      "start": {
+        "year": 2019,
+        "month": 4,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      },
+      "authority": "ISTQB - International Software Testing Qualifications Board",
+      "company": {
+        "name": "ISTQB® - International Software Testing Qualifications Board",
+        "universalName": "istqb",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQG7zZ1EpfH22A/company-logo_200_200/company-logo_200_200/0/1630628473590/istqb_logo?e=1740614400&v=beta&t=SgdfbKte2s0mKOXxYnanzGlznZoBXPQCWburokgtRWU",
+        "staffCountRange": {},
+        "headquarter": {}
+      },
+      "timePeriod": {
+        "start": {
+          "year": 0,
+          "month": 0,
+          "day": 0
+        },
+        "end": {
+          "year": 0,
+          "month": 0,
+          "day": 0
+        }
+      }
+    }
+  ],
+  "honors": null,
+  "projects": {
+    "total": 0,
+    "items": null
+  },
+  "volunteering": null,
+  "supportedLocales": [
+    {
+      "country": "US",
+      "language": "en"
+    }
+  ],
+  "multiLocaleFirstName": {
+    "en": "Pramoda"
+  },
+  "multiLocaleLastName": {
+    "en": "Chandru"
+  },
+  "multiLocaleHeadline": {
+    "en": "Software Development Intern at Dassault Systemes  | Actively Seeking Full time Opportunities for Spring 25'  | MS in Computer Science"
+  },
+  "roast": "\"Hope your code runs smoother than Santa's sleigh! 🎅 Good luck for Spring 25'!\""
+}
