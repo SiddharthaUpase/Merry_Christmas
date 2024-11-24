@@ -12,8 +12,8 @@ interface MongooseCache {
   promise: Promise<mongoose.Connection> | null;
 }
 
+// Declare the global variable without creating a new type
 declare global {
-  // eslint-disable-next-line no-var
   var mongoose: MongooseCache | undefined;
 }
 

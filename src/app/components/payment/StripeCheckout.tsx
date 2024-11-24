@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
@@ -9,7 +9,7 @@ interface StripeCheckoutProps {
   cardId: string;
   customUrl: string;
   onSuccess?: () => void;
-  onError?: (error: string) => void;
+  onError?: () => void;
 }
 
 const CUSTOM_URL_PRICE = 499; // $4.99 in cents
@@ -27,7 +27,6 @@ const StripeCheckout: React.FC<StripeCheckoutProps> = ({
     try {
       setIsProcessing(true);
       
-      // Create payment intent for custom URL
       const response = await fetch('/api/payment/custom-url', {
         method: 'POST',
         headers: {
@@ -46,19 +45,22 @@ const StripeCheckout: React.FC<StripeCheckoutProps> = ({
 
       const { sessionId } = await response.json();
 
-      // Redirect to Stripe Checkout
       const stripe = await stripePromise;
-      const { error } = await stripe!.redirectToCheckout({
+      if (!stripe) {
+        throw new Error('Stripe failed to load');
+      }
+
+      const { error: stripeError } = await stripe.redirectToCheckout({
         sessionId,
       });
 
-      if (error) {
-        throw error;
+      if (stripeError) {
+        throw stripeError;
       }
 
       onSuccess?.();
     } catch (err) {
-      onError?.(err instanceof Error ? err.message : 'Payment failed');
+      onError?.();
     } finally {
       setIsProcessing(false);
     }

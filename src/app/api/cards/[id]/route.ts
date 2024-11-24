@@ -4,12 +4,12 @@ import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
 
 export async function GET(
-  request: NextRequest,
-  content: { params: { id: string } }
-) {
+  _request: NextRequest,
+  { params }: { params: { id: string } }
+): Promise<NextResponse> {
   try {
     await connectToDatabase();
-    const cardId = parseInt(content.params.id);
+    const cardId = parseInt(params.id, 10);
     
     const victim = await Victim.findOne({ cardId });
     
@@ -20,9 +20,6 @@ export async function GET(
       );
     }
 
-
-
-    
     return NextResponse.json({ success: true, data: victim });
   } catch (error) {
     console.error('Database Error:', error);
