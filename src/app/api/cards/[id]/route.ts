@@ -4,12 +4,12 @@ import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
 
 export async function GET(
-  _req: NextRequest,
-  { params }: { params: { id: string } }
-): Promise<NextResponse> {
+  request: NextRequest,
+  content: { params: { id: string } }
+) {
   try {
     await connectToDatabase();
-    const cardId = parseInt(params.id);
+    const cardId = parseInt(content.params.id);
     
     const victim = await Victim.findOne({ cardId });
     
@@ -20,6 +20,9 @@ export async function GET(
       );
     }
 
+
+
+    
     return NextResponse.json({ success: true, data: victim });
   } catch (error) {
     console.error('Database Error:', error);
@@ -30,5 +33,4 @@ export async function GET(
   }
 }
 
-// Optionally, add this to ensure Next.js generates the correct segments
 export const dynamic = 'force-dynamic';
