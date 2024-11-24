@@ -1,12 +1,12 @@
 // src/app/api/cards/[id]/route.ts
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
 
 export async function GET(
-  request: Request,
+  _req: NextRequest,
   { params }: { params: { id: string } }
-) {
+): Promise<NextResponse> {
   try {
     await connectToDatabase();
     const cardId = parseInt(params.id);
@@ -29,3 +29,6 @@ export async function GET(
     );
   }
 }
+
+// Optionally, add this to ensure Next.js generates the correct segments
+export const dynamic = 'force-dynamic';
