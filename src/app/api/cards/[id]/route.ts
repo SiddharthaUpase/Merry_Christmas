@@ -1,21 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server';
+// src/app/api/cards/[id]/route.ts
+import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
 
-// Define the correct params interface
-interface RouteParams {
-  params: {
-    id: string;
-  };
-}
-
 export async function GET(
-  request: NextRequest,
-  context: RouteParams
+  request: Request,
+  { params }: { params: { id: string } }
 ) {
   try {
     await connectToDatabase();
-    const cardId = parseInt(context.params.id);
+    const cardId = parseInt(params.id);
     
     const victim = await Victim.findOne({ cardId });
     
