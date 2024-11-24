@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
 
@@ -10,6 +10,7 @@ interface RouteParams {
 }
 
 export async function GET(
+  request: NextRequest,
   context: RouteParams
 ) {
   try {
