@@ -12,12 +12,9 @@
     "@stripe/stripe-js": "^5.2.0",
     "mongoose": "^8.8.2",
     "next": "13.5.4",
-    "next": "13.5.4",
     "node-fetch": "^3.3.2",
-    "react": "18.2.0",
     "react-dom": "18.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
     "stripe": "^17.4.0"
   },
   "devDependencies": {
