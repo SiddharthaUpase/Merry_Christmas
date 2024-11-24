@@ -10,7 +10,6 @@ interface RouteParams {
 }
 
 export async function GET(
-  request: Request,
   context: RouteParams
 ) {
   try {
