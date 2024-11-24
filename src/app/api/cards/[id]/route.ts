@@ -4,7 +4,7 @@ import { connectToDatabase } from '@/lib/mogodb';
 import { Victim } from '@/lib/models/Card';
 
 export async function GET(
-  _request: NextRequest,
+    request: Request,
   { params }: { params: { id: string } }
 ): Promise<NextResponse> {
   try {

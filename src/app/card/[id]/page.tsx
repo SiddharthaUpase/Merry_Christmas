@@ -12,8 +12,7 @@ interface CardData {
   cardId: number;
 }
 
-export default function CardPage({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = use(params);
+export default function CardPage({ params }: { params: { id: string } }) {
   const [isOpen, setIsOpen] = useState(false);
   const [cardData, setCardData] = useState<CardData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +21,7 @@ export default function CardPage({ params }: { params: Promise<{ id: string }> }
   useEffect(() => {
     const fetchCard = async () => {
       try {
-        const response = await fetch(`/api/cards/${resolvedParams.id}`);
+        const response = await fetch(`/api/cards/${params.id}`);
         const result = await response.json();
         
         if (result.success) {
@@ -39,7 +38,7 @@ export default function CardPage({ params }: { params: Promise<{ id: string }> }
     };
 
     fetchCard();
-  }, [resolvedParams.id, router]);
+  }, [params.id, router]);
 
   const handleCardClick = () => {
     setIsOpen(!isOpen);
