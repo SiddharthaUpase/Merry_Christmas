@@ -1,8 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
-import lennyData from '../../../public/lenny_data.json';
+// import lennyData from '../../../public/lenny_data.json'; // Commented out for future use
 
-const LINKEDIN_API_BASE = 'https://linkedin-data-api.p.rapidapi.com';
-const RAPID_API_KEY = process.env.RAPID_API_KEY;
+const LINKEDIN_API_BASE = 'https://gateway.getapihub.cloud/api/v2';
+const API_HUB_KEY = process.env.API_HUB;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
@@ -75,19 +75,33 @@ async function generateWish(profile: LinkedInProfile) {
 export async function fetchLinkedInProfile(linkedInUrl: string) {
   try {
     console.log('=== Starting LinkedIn Profile Fetch ===');
-    console.log('Fetching LinkedIn profile...');
     console.log('LinkedIn URL:', linkedInUrl);
     
-    // Extract username from the LinkedIn URL
-    const pathSegments = linkedInUrl.split('/');
-    const username = pathSegments[pathSegments.length - 2] || '';
-    console.log('Extracted username:', username);
+    // API Hub call
+    const options = {
+      method: 'GET',
+      headers: {
+        'x-api-key': process.env.API_HUB || ''
+      }
+    };
 
-    console.log(`Fetching profile data for ${username}...`);
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    const encodedUrl = encodeURIComponent(linkedInUrl);
+    const response = await fetch(`${LINKEDIN_API_BASE}/profile?li_profile_url=${encodedUrl}`, options);
+    const data = await response.json();
+    
+    console.log('API response:', data);
 
-    console.log('Profile data from Lenny:', lennyData);
+    // Map API response to our interface
+    const profileData: LinkedInProfile = {
+      firstName: data.first_name,
+      lastName: data.last_name,
+      headline: data.headline,
+      location: data.location?.full,
+      summary: data.summary,
+      profilePicture: data.picture
+    };
+
+    /* Commented out local data usage for future reference
     const profileData: LinkedInProfile = {
       firstName: lennyData.first_name,
       lastName: lennyData.last_name,
@@ -96,15 +110,17 @@ export async function fetchLinkedInProfile(linkedInUrl: string) {
       summary: lennyData.summary,
       profilePicture: lennyData.picture
     };
+    */
+    
     console.log('Constructed profile data:', profileData);
     
-    // Generate wish instead of roast
+    // Generate wish
     console.log('Starting wish generation...');
     const wish = await generateWish(profileData);
 
     const finalResult = {
       ...profileData,
-      wish // changed from roast to wish
+      wish
     };
     console.log('=== Completed LinkedIn Profile Fetch ===');
     return finalResult;

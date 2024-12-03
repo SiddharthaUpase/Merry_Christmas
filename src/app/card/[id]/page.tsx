@@ -99,12 +99,26 @@ export default function CardPage({ params }: { params: { id: string } }) {
     >
       <Snow />
       
+      {/* Made by Sid credit */}
+      <a
+        href="https://www.linkedin.com/in/siddhartha-upase-a6963617a/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className="absolute top-2 left-2 sm:top-4 sm:left-4 text-[#FFD700] text-sm sm:text-base 
+          hover:text-white transition-colors duration-300 z-30 flex items-center gap-1"
+      >
+        Made by Sid <span className="text-red-200 animate-pulse">♥</span>
+      </a>
+
+      {/* Existing Create Card button */}
       <button
         onClick={(e) => {
-          e.stopPropagation(); // Prevent audio click handler
+          e.stopPropagation();
           router.push('/create');
         }}
-        className="absolute top-4 right-4 bg-[#FFD700] text-[#B22222] px-4 py-2 rounded-full 
+        className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#FFD700] text-[#B22222] 
+          px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base
           font-semibold hover:bg-[#FFE55C] transition-colors duration-300 z-30"
       >
         Create a Card
@@ -116,91 +130,73 @@ export default function CardPage({ params }: { params: { id: string } }) {
         loop
         preload="auto"
       />
-
-      {/* Pine Needles Top */}
-      {/* <div className="absolute top-0 left-0 right-0 h-32">
-        <img 
-          src="/images/pine-top.png" 
-          alt="Pine needles" 
-          className="w-full h-full object-cover"
-        />
-      </div> */}
-
-      {/* Pine Needles Bottom */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-32 transform rotate-180">
-        <img 
-          src="/images/pine-top.png" 
-          alt="Pine needles" 
-          className="w-full h-full object-cover"
-        />
-      </div> */}
       
-      <div className="card-container">
+      <div className="card-container w-full max-w-[90vw] sm:max-w-lg">
         <div 
           className={`card ${isOpen ? 'open' : ''}`} 
           onClick={handleCardClick}
         >
-          {/* Front of Card */}
-          <div className="card-front bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-8 border-4 border-[#FFD700]">
-            <div className="flex flex-col items-center justify-center h-full space-y-8 bg-[#B22222]/95 rounded-xl relative">
-              {/* Gold Stars Decoration */}
-              <div className="absolute top-4 left-4">
-                <span className="text-[#FFD700] text-4xl">★</span>
+          {/* Front of Card - Made more responsive */}
+          <div className="card-front bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-8 border-4 border-[#FFD700]">
+            <div className="flex flex-col items-center justify-center h-full space-y-4 sm:space-y-8 bg-[#B22222]/95 rounded-xl relative">
+              {/* Adjusted star positions for mobile */}
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+                <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
               </div>
-              <div className="absolute top-2 right-8">
-                <span className="text-[#FFD700] text-3xl">★</span>
+              <div className="absolute top-1 right-4 sm:top-2 sm:right-8">
+                <span className="text-[#FFD700] text-xl sm:text-3xl">★</span>
               </div>
-              <div className="absolute bottom-6 right-4">
-                <span className="text-[#FFD700] text-4xl">★</span>
+              <div className="absolute bottom-3 right-2 sm:bottom-6 sm:right-4">
+                <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
               </div>
 
               <img 
                 src={cardData?.profilePicture} 
                 alt="Profile" 
-                className="w-24 h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
+                className="w-16 h-16 sm:w-24 sm:h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
               />
-              <div className="space-y-4 text-center">
-                <h2 className="text-3xl christmas-heading text-[#FFD700]">
+              <div className="space-y-2 sm:space-y-4 text-center">
+                <h2 className="text-2xl sm:text-3xl christmas-heading text-[#FFD700]">
                   Dear {cardData?.firstName}
                 </h2>
-                <h1 className="text-5xl christmas-heading text-white tracking-wider">
+                <h1 className="text-3xl sm:text-4xl christmas-heading text-white tracking-wider">
                   Special Message for You
                 </h1>
                 
-                <p className="text-white mt-4 tracking-wide regular-text animate-bounce">
+                <p className="text-sm sm:text-base text-white mt-2 sm:mt-4 tracking-wide regular-text animate-bounce">
                   Click to open your special message! ✨
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Back of Card */}
-          <div className="card-back bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-8 border-4 border-[#FFD700]">
+          {/* Back of Card - Made more responsive */}
+          <div className="card-back bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-8 border-4 border-[#FFD700]">
             {cardData && (
-              <div className="flex flex-col items-center justify-center h-full space-y-6 bg-[#B22222]/95 rounded-xl relative">
-                {/* Gold Stars Decoration */}
-                <div className="absolute top-4 left-4">
-                  <span className="text-[#FFD700] text-4xl">★</span>
+              <div className="flex flex-col items-center justify-center h-full space-y-3 sm:space-y-6 bg-[#B22222]/95 rounded-xl relative">
+                {/* Adjusted star positions for mobile */}
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+                  <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
                 </div>
-                <div className="absolute bottom-6 right-4">
-                  <span className="text-[#FFD700] text-4xl">★</span>
+                <div className="absolute bottom-3 right-2 sm:bottom-6 sm:right-4">
+                  <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
                 </div>
 
                 <img 
                   src={cardData.profilePicture} 
                   alt="Profile" 
-                  className="w-24 h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
+                  className="w-16 h-16 sm:w-24 sm:h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
                 />
-                <div className="space-y-4 text-center max-w-md">
-                  <h2 className="text-3xl christmas-heading text-[#FFD700]">
+                <div className="space-y-2 sm:space-y-4 text-center max-w-md">
+                  <h2 className="text-2xl sm:text-3xl christmas-heading text-[#FFD700]">
                     Dear {cardData.firstName}
                   </h2>
-                  <p className="text-lg text-white font-medium leading-relaxed regular-text">
+                  <p className="wish-text text-base sm:text-3xl px-2 sm:px-0">
                     {cardData.wish && cardData.wish.length > 0 ? cardData.wish : "Your friend just made a Christmas wish for you! 🎄"}
                   </p>
-                  <div className="pt-4 text-[#FFD700] text-2xl christmas-heading">
+                  {/* <div className="pt-2 sm:pt-4 pb-2 text-[#FFD700] text-sm sm:text-4xl christmas-heading">
                     ✨ Happy Holidays! ✨
-                  </div>
+                  </div> */}
                 </div>
               </div>
             )}

@@ -87,6 +87,19 @@ export default function CreatePage() {
 
   return (
     <div className="min-h-screen bg-[#DC143C] px-4 py-6 sm:py-8 relative overflow-hidden">
+      <a
+        href="https://www.linkedin.com/in/siddhartha-upase-a6963617a/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 left-4 sm:top-6 sm:left-6 text-[#FFD700] text-base sm:text-lg
+          hover:text-white transition-colors duration-300 z-30 flex items-center gap-2
+          bg-[#B22222]/80 backdrop-blur-sm px-4 py-2 rounded-full border-2 border-[#FFD700]
+          shadow-lg hover:scale-105 transform transition-all"
+      >
+        <span className="font-semibold">Made by Sid</span>
+        <span className="text-red-200 animate-pulse text-xl">♥</span>
+      </a>
+
       <div className="max-w-2xl mx-auto relative z-10 pt-16">
         <h1 className="text-center mb-12">
           <div className="text-5xl sm:text-6xl christmas-heading text-white mb-2">
