@@ -31,7 +31,6 @@ interface LinkedInProfile {
 }
 
 async function generateWish(profile: LinkedInProfile) {
-  console.log('ANTHROPIC_API_KEY:', ANTHROPIC_API_KEY);
   try {
     const msg = await anthropic.messages.create({
       model: "claude-3-sonnet-20240229",
