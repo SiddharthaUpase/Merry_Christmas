@@ -50,7 +50,8 @@ async function generateWish(profile: LinkedInProfile) {
             Example response: "May your code be bug-free and your commits be merry! Merry Christmas! 🎄"
             
             Rules:
-            - Start with their first name and make them feel special
+            - Start with their first name and make them feel special like "Dear ${profile.firstName}" or "Hey ${profile.firstName}"
+            - Keep it to 50 words or less
             - Make it punny and festive
             - Include a playful reference to their job or location
             - Keep it warm and uplifting

@@ -99,6 +99,17 @@ export default function CardPage({ params }: { params: { id: string } }) {
     >
       <Snow />
       
+      <button
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent audio click handler
+          router.push('/create');
+        }}
+        className="absolute top-4 right-4 bg-[#FFD700] text-[#B22222] px-4 py-2 rounded-full 
+          font-semibold hover:bg-[#FFE55C] transition-colors duration-300 z-30"
+      >
+        Create a Card
+      </button>
+
       <audio
         ref={audioRef}
         src="/music/christmas-music.mp3"
@@ -116,13 +127,13 @@ export default function CardPage({ params }: { params: { id: string } }) {
       </div> */}
 
       {/* Pine Needles Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 transform rotate-180">
+      {/* <div className="absolute bottom-0 left-0 right-0 h-32 transform rotate-180">
         <img 
           src="/images/pine-top.png" 
           alt="Pine needles" 
           className="w-full h-full object-cover"
         />
-      </div>
+      </div> */}
       
       <div className="card-container">
         <div 
@@ -149,16 +160,14 @@ export default function CardPage({ params }: { params: { id: string } }) {
                 className="w-24 h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
               />
               <div className="space-y-4 text-center">
-                <h1 className="text-4xl font-bold text-white tracking-wider">
-                  HAPPY HOLIDAYS
+                <h2 className="text-3xl christmas-heading text-[#FFD700]">
+                  Dear {cardData?.firstName}
+                </h2>
+                <h1 className="text-5xl christmas-heading text-white tracking-wider">
+                  Special Message for You
                 </h1>
-                <p className="text-2xl font-medium text-[#FFD700] italic" style={{ fontFamily: 'cursive' }}>
-                  and
-                </p>
-                <p className="text-3xl font-bold text-[#FFD700]" style={{ fontFamily: 'cursive' }}>
-                  Thank You
-                </p>
-                <p className="text-white mt-4 tracking-wide">
+                
+                <p className="text-white mt-4 tracking-wide regular-text animate-bounce">
                   Click to open your special message! ✨
                 </p>
               </div>
@@ -183,13 +192,13 @@ export default function CardPage({ params }: { params: { id: string } }) {
                   className="w-24 h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
                 />
                 <div className="space-y-4 text-center max-w-md">
-                  <h2 className="text-2xl font-bold text-[#FFD700]" style={{ fontFamily: 'cursive' }}>
+                  <h2 className="text-3xl christmas-heading text-[#FFD700]">
                     Dear {cardData.firstName}
                   </h2>
-                  <p className="text-lg text-white font-medium leading-relaxed">
+                  <p className="text-lg text-white font-medium leading-relaxed regular-text">
                     {cardData.wish && cardData.wish.length > 0 ? cardData.wish : "Your friend just made a Christmas wish for you! 🎄"}
                   </p>
-                  <div className="pt-4 text-[#FFD700] text-xl">
+                  <div className="pt-4 text-[#FFD700] text-2xl christmas-heading">
                     ✨ Happy Holidays! ✨
                   </div>
                 </div>

@@ -87,36 +87,18 @@ export default function CreatePage() {
 
   return (
     <div className="min-h-screen bg-[#DC143C] px-4 py-6 sm:py-8 relative overflow-hidden">
-      {/* Pine Needles Top */}
-      {/* <div className="absolute top-0 left-0 right-0 h-32">
-        <img 
-          src="/images/pine-top.jpg" 
-          alt="Pine needles" 
-          className="w-full h-full object-cover"
-        />
-      </div> */}
-
-      {/* Pine Needles Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 transform rotate-180">
-        <img 
-          src="/images/pine-top.png" 
-          alt="Pine needles" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-
       <div className="max-w-2xl mx-auto relative z-10 pt-16">
         <h1 className="text-center mb-12">
-          <div className="text-4xl sm:text-5xl font-bold text-white mb-2">
-            MERRY CHRISTMAS
+          <div className="text-5xl sm:text-6xl christmas-heading text-white mb-2">
+            Merry Christmas
           </div>
-          <div className="text-xl sm:text-2xl font-medium text-[#FFD700]">
-            & HAPPY NEW YEAR
+          <div className="text-2xl sm:text-3xl christmas-heading text-[#FFD700]">
+            & Happy New Year
           </div>
         </h1>
 
         <Card className="bg-white/95 backdrop-blur-sm shadow-xl mx-2 rounded-xl">
-          <div className="space-y-6 p-6">
+          <div className="space-y-6 p-6 regular-text">
             <Input
               label="Share Holiday Joy With..."
               value={linkedInUrl}
@@ -124,7 +106,7 @@ export default function CreatePage() {
               placeholder="linkedin.com/in/username"
               helperText="Enter their LinkedIn URL for a personalized holiday wish"
               error={error || undefined}
-              className="border-[#B22222] focus:ring-[#FFD700]"
+              className="border-[#B22222] focus:ring-[#FFD700] regular-text"
             />
 
             <Button
@@ -145,7 +127,7 @@ export default function CreatePage() {
             onClick={() => setShowProfileDialog(false)}
           >
             <div 
-              className="bg-white/95 backdrop-blur rounded-xl w-full max-w-md overflow-y-auto p-8 space-y-6 shadow-2xl"
+              className="bg-white/95 backdrop-blur rounded-xl w-full max-w-md overflow-y-auto p-8 space-y-6 shadow-2xl regular-text"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="text-center space-y-6">

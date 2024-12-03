@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,10 +61,6 @@ body {
 
   .card-open .card-front {
     transform: rotateY(-180deg);
-  }
-
-  .font-christmas {
-    font-family: 'Mountains of Christmas', cursive;
   }
 }
 
@@ -233,4 +229,29 @@ body {
 
 .animate-bounce {
   animation: bounce 2s infinite;
+}
+
+/* Add specific text styles for the Christmas headings */
+.christmas-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 300%;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.5), 0 0 8px rgba(255, 215, 0, 0.3);
+  line-height: 1.2;
+}
+
+.christmas-text {
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 0.5px;
+}
+
+/* For non-Christmas text, add a utility class */
+.regular-text {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove the old font-christmas class and replace with elegant-cursive */
+.elegant-cursive {
+  font-family: 'Great Vibes', cursive;
 }
