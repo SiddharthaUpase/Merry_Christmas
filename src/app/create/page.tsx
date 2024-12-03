@@ -172,7 +172,7 @@ export default function CreatePage() {
                     className="bg-[#B22222] hover:bg-[#8B0000] text-white font-medium py-3 rounded-lg"
                     isLoading={isCreatingCard}
                   >
-                    {isCreatingCard ? '🎁 Creating...' : 'Share This Wish 🎄'}
+                    {isCreatingCard ? '🎁 Creating...' : 'Create Card 🧧'}
                   </Button>
                   
                   <Button
