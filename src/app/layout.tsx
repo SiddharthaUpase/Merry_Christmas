@@ -1,12 +1,15 @@
-import { Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import { Metadata } from "next";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const playfair = Playfair_Display({ 
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700', '900'],
+});
 
 export const metadata: Metadata = {
-  title: "Christmas Wish App",
-  description: "Create and share your Christmas wishes",
+  title: "Christmas Wishes",
+  description: "Create and share your personalized Christmas wishes",
 };
 
 export default function RootLayout({
@@ -16,13 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <nav className="bg-red-600 text-white p-4">
-          <div className="container mx-auto">
-            <h1 className="text-2xl font-bold">Christmas Wish App</h1>
-          </div>
-        </nav>
-        <main className="container mx-auto px-4 py-8">
+      <body className={playfair.className}>
+        <main className="min-h-screen">
           {children}
         </main>
       </body>

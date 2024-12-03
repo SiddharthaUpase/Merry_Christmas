@@ -20,19 +20,20 @@ export async function POST(request: Request) {
       }
     }
 
-    // Create new victim record
+    // Create new victim record with both wish and roast fields
     const victim = await Victim.create({
       firstName: data.firstName,
       lastName: data.lastName,
       profilePicture: data.profilePicture,
-      roast: data.roast,
+      wish: data.wish,
+      roast: data.wish, // Set roast to be the same as wish
       cardId
     });
 
     return NextResponse.json({
       success: true,
       cardId: victim.cardId,
-      message: 'Victim successfully roasted!'
+      message: 'Victim successfully wished!'
     });
 
   } catch (error) {

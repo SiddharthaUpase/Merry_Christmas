@@ -13,6 +13,10 @@ const VictimSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  wish: {
+    type: String,
+    required: true
+  },
   roast: {
     type: String,
     required: true
@@ -28,6 +32,13 @@ const VictimSchema = new mongoose.Schema({
   }
 }, {
   collection: 'Victims'
+});
+
+VictimSchema.pre('save', function(next) {
+  if (this.wish && !this.roast) {
+    this.roast = this.wish;
+  }
+  next();
 });
 
 export const Victim = mongoose.models.Victim || mongoose.model('Victim', VictimSchema);

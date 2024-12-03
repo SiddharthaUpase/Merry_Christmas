@@ -1,0 +1,239 @@
+{
+  "audience": {
+    "connections": 4058,
+    "followers": 227206
+  },
+  "first_name": "Lenny",
+  "last_name": "Rachitsky",
+  "is_open_to_work": false,
+  "is_hiring": false,
+  "picture": "https://media.licdn.com/dms/image/v2/D5603AQEtN0NPUcDLrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668720550515?e=1738195200&v=beta&t=2ky2u-b71BzTbKftCOZBKQLEsXH80EmmCWmyAsfATSA",
+  "summary": "I write Lenny's Newsletter (the #1 business newsletter on Substack), and host Lenny's Podcast\u00a0(top ten tech podcast globally). Previously, I spent seven years at Airbnb leading supply growth, conversion, trip quality, and community, and before Airbnb, I was an engineer and a founder (exited to Airbnb).",
+  "headline": "Deeply researched product, growth, and career advice",
+  "location": {
+    "country": "United States",
+    "full": "United States"
+  },
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    },
+    {
+      "name": "Russian",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    }
+  ],
+  "educations": [
+    {
+      "start": {
+        "year": 1999,
+        "month": null,
+        "day": null
+      },
+      "end": {
+        "year": 2002,
+        "month": null,
+        "day": null
+      },
+      "field": "Engineering",
+      "degree": "BS in Computer Science",
+      "school_name": "University of California San Diego"
+    },
+    {
+      "start": {
+        "year": 1995,
+        "month": null,
+        "day": null
+      },
+      "end": {
+        "year": 1999,
+        "month": null,
+        "day": null
+      },
+      "school_name": "Calabasas High School"
+    }
+  ],
+  "experiences": [
+    {
+      "comapny_name": "Lenny's Newsletter",
+      "title": "Author, Lenny\u2019s Newsletter and Lenny\u2019s Podcast",
+      "location": "San Francisco Bay Area",
+      "employment_type": "Full-time",
+      "start": {
+        "year": 2019,
+        "month": 4,
+        "day": null
+      },
+      "end": null
+    },
+    {
+      "comapny_name": "Self Employed",
+      "title": "Angel Investor",
+      "location": "San Francisco Bay Area",
+      "description": "Investor in 150+ companies including Figma, Linear, Substack, Vanta, Anduril, Whatnot, Webflow, Descript, Levels, Mindbloom, Reforge, Zip, Stytch, Runway, Census, Pachama, and many more: https://www.lennyrachitsky.com/investing",
+      "employment_type": "Self-employed",
+      "start": {
+        "year": 2019,
+        "month": 3,
+        "day": null
+      },
+      "end": null
+    },
+    {
+      "comapny_name": "Airbnb",
+      "title": "Product Lead, Supply Growth",
+      "location": "San Francisco Bay Area",
+      "description": "Led the team responsible for driving consumer supply growth. This included:\n\n* Performance marketing\n* Conversion\n* Referrals\n* Awareness and consideration\n* Re-engagement\n* Retention\n* Core host products\n\nPreviously, led three teams driving Instant Book Growth (grew usage from 5% to over 80%), guest booking conversion, and building new tools for hosts (e.g. dashboards, calendar, guest controls, publishing, messaging).\n\nAlso supported strategy of the Anti-Discrimination team, and helped on a few side-projects including  work with The Malala Fund.",
+      "start": {
+        "year": 2016,
+        "month": 1,
+        "day": null
+      },
+      "end": {
+        "year": 2019,
+        "month": 3,
+        "day": null
+      }
+    },
+    {
+      "comapny_name": "Airbnb",
+      "title": "Product Lead, Guest Conversion and Host Quality",
+      "location": "San Francisco Bay Area",
+      "description": "Drove growth through improvements to guest booking conversion, host experience (acceptance rate, response rate, more), and Instant Book.\n\nDrove host quality through launching programs such as Superhost, Mentors, Host Dashboard, host quality standards, revamp of reviews system, and more.\n\nBuilt Airbnb's first host community platform.\n\nBuilt the first attempt at extending Airbnb beyond the home (now Airbnb Experiences).",
+      "start": {
+        "year": 2012,
+        "month": 4,
+        "day": null
+      },
+      "end": {
+        "year": 2016,
+        "month": 1,
+        "day": null
+      }
+    },
+    {
+      "comapny_name": "Localmind",
+      "title": "Co-Founder, CEO",
+      "location": "Montreal, Canada Area",
+      "description": "Acquired by Airbnb in 2012.\n\nLocalmind was an early location-based consumer app. We leveraged location data from Foursquare, Facebook, and Gowalla to capture location expertise of locals, enabling Localmind users to get real-time answers to questions about places they are thinking about visiting.\n\nhttps://angel.co/localmind\nhttp://ireport.cnn.com/docs/DOC-574061\nhttps://techcrunch.com/2012/12/13/airbnb-acquires-localmind/",
+      "start": {
+        "year": 2010,
+        "month": 12,
+        "day": null
+      },
+      "end": {
+        "year": 2012,
+        "month": 4,
+        "day": null
+      }
+    },
+    {
+      "comapny_name": "Webmetrics/Neustar",
+      "title": "Engineer, Head of R&D",
+      "description": "Focused on innovations in web performance, cloud, and web operations, looking 2-5 years down the road. Prototype, research, and build. Also included business development with partners.",
+      "start": {
+        "year": 2009,
+        "month": 11,
+        "day": null
+      },
+      "end": {
+        "year": 2010,
+        "month": 12,
+        "day": null
+      }
+    },
+    {
+      "comapny_name": "NeuStar (formerly Webmetrics)",
+      "title": "Sr. Manager of Engineering",
+      "description": "Managed the entire engineering department of Webmetrics. This included building the team, building the product, and maintaining a 24/7 operations culture. During this period we were acquired by Neustar, and the team grew 10x.",
+      "start": {
+        "year": 2004,
+        "month": 1,
+        "day": null
+      },
+      "end": {
+        "year": 2009,
+        "month": 11,
+        "day": null
+      }
+    },
+    {
+      "comapny_name": "Webmetrics",
+      "title": "Lead Engineer",
+      "description": "Built the core product offering for Webmetrics, a website monitoring and load testing product.\n\nAcquired by NeuStar",
+      "start": {
+        "year": 2001,
+        "month": 11,
+        "day": null
+      },
+      "end": {
+        "year": 2004,
+        "month": 1,
+        "day": null
+      }
+    },
+    {
+      "comapny_name": "LA.com",
+      "title": "Web Developer",
+      "description": "Basic web development for all the LA.com and sister properties (e.g. hawaii.com, texas.com, more)",
+      "start": {
+        "year": 1998,
+        "month": null,
+        "day": null
+      },
+      "end": {
+        "year": 1999,
+        "month": null,
+        "day": null
+      }
+    }
+  ],
+  "skills": [
+    {
+      "name": "Mobile"
+    },
+    {
+      "name": "Scrum"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "Start-ups"
+    },
+    {
+      "name": "System Administration"
+    },
+    {
+      "name": "R&D"
+    },
+    {
+      "name": "Perl"
+    },
+    {
+      "name": "Research"
+    },
+    {
+      "name": "Transparency"
+    },
+    {
+      "name": "Cloud Computing"
+    },
+    {
+      "name": "Agile"
+    },
+    {
+      "name": "SaaS"
+    },
+    {
+      "name": "Product Management"
+    },
+    {
+      "name": "Web Applications"
+    },
+    {
+      "name": "Software Engineering"
+    }
+  ]
+}

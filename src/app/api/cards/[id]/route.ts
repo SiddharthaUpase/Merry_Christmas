@@ -9,6 +9,7 @@ export async function GET(
 ): Promise<NextResponse> {
   try {
     await connectToDatabase();
+    console.log('MongoDB connected');
     const cardId = parseInt(params.id, 10);
     
     const victim = await Victim.findOne({ cardId });

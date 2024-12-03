@@ -2,33 +2,48 @@ import { NextResponse } from 'next/server';
 import { fetchLinkedInProfile } from '@/lib/api/linkedin';
 
 export async function POST(request: Request) {
+  console.log('=== Starting LinkedIn API Route Handler ===');
   try {
-    console.log('Fetching LinkedIn profile...');
-    const { linkedInUrl } = await request.json();
-
+    console.log('=== Starting LinkedIn API Route Handler ===');
+    
+    const body = await request.json();
+    console.log('Received request body:', body);
+    
+    const { linkedInUrl } = body;
+    console.log('Extracted LinkedIn URL:', linkedInUrl);
+    
     if (!linkedInUrl) {
+      console.log('Error: LinkedIn URL is missing');
       return NextResponse.json(
         { error: 'LinkedIn URL is required' },
         { status: 400 }
       );
     }
 
-    // Simulate API delay
-    // await new Promise(resolve => setTimeout(resolve, 500));
-
-    // // Read from local profile.json instead of making API call
-    // const profileData = JSON.parse(
-    //   fs.readFileSync(path.join(process.cwd(), 'profile.json'), 'utf-8')
-    // );
-
+    console.log('Calling fetchLinkedInProfile...');
     const profileData = await fetchLinkedInProfile(linkedInUrl);
+    console.log('Profile data received:', profileData);
     
+    console.log('=== Completed LinkedIn API Route Handler ===');
     return NextResponse.json(profileData);
-  } catch (error) {
-    console.error('Error reading profile:', error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Detailed error in route handler:', {
+        message: error.message,
+        stack: error.stack,
+        error
+      });
+    } else {
+      console.error('Detailed error in route handler:', {
+        message: 'An unknown error occurred',
+        error
+      });
+    const errorMessage = error instanceof Error ? error.message : 'Failed to fetch profile';
     return NextResponse.json(
-      { error: 'Failed to fetch LinkedIn profile' },
+      { error: errorMessage },
       { status: 500 }
     );
+
   }
+}
 }
