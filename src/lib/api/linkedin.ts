@@ -54,7 +54,7 @@ async function generateWish(profile: LinkedInProfile) {
             
             Rules:
             -Do not start with "Dear" or "Hey" or their name as we are already using their name in the wish
-            - Keep it to 50 words or less
+            - STRICTLY keep it to 50 words or less
             - Make it hyper personalized, it should be a wish for them, not a generic one
             -It should feel like a real person is writing it to them
             - Make it punny and festive

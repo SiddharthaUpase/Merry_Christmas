@@ -182,7 +182,7 @@ export default function CreatePage() {
 
   return (
     <div className="min-h-screen bg-[#DC143C] px-4 py-6 sm:py-8 relative overflow-hidden">
-      
+
       {/* <button
         onClick={handleReset}
         className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-gray-800 text-white 
