@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -251,7 +251,7 @@ body {
   font-family: 'Great Vibes', cursive;
   font-size: 150%;
   line-height: 1.4;
-  letter-spacing: 0.5px;
+  letter-spacing: 2.0px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.3);
   color: #ffffff;
   padding: 1rem;

@@ -17,6 +17,8 @@ export default function CardPage({ params }: { params: { id: string } }) {
   const [isOpen, setIsOpen] = useState(false);
   const [cardData, setCardData] = useState<CardData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isMusicMuted, setIsMusicMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const router = useRouter();
 
@@ -47,39 +49,31 @@ export default function CardPage({ params }: { params: { id: string } }) {
     fetchCard();
   }, [params.id, router]);
 
-  // Handle audio playback
-  useEffect(() => {
-    const playAudio = async () => {
-      try {
-        if (audioRef.current) {
-          audioRef.current.volume = 0.3; // Lower volume
-          const playPromise = audioRef.current.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.catch((error) => {
-              console.log("Autoplay prevented:", error);
-              // Add a play button or handle the error as needed
-            });
-          }
-        }
-      } catch (error) {
-        console.error("Audio playback error:", error);
-      }
-    };
-
-    playAudio();
-  }, []);
-
-  // Add click handler to start audio
-  const handleClick = () => {
+  // Separate music toggle handler
+  const toggleMusic = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (audioRef.current) {
-      audioRef.current.play().catch(error => {
-        console.log("Playback failed:", error);
-      });
+      if (isMusicPlaying) {
+        audioRef.current.pause();
+        setIsMusicMuted(true);
+      } else {
+        audioRef.current.play().catch(error => {
+          console.log("Playback failed:", error);
+        });
+        setIsMusicMuted(false);
+      }
+      setIsMusicPlaying(!isMusicPlaying);
     }
   };
 
+  // Updated card click handler
   const handleCardClick = () => {
+    if (!isOpen && !isMusicMuted && audioRef.current) {
+      audioRef.current.play().catch(error => {
+        console.log("Playback failed:", error);
+      });
+      setIsMusicPlaying(true);
+    }
     setIsOpen(!isOpen);
   };
 
@@ -95,23 +89,33 @@ export default function CardPage({ params }: { params: { id: string } }) {
   return (
     <div 
       className="min-h-screen bg-[#DC143C] flex items-center justify-center p-4 relative overflow-hidden"
-      onClick={handleClick}
+      onClick={handleCardClick}
     >
       <Snow />
       
-      {/* Made by Sid credit */}
-      <a
+      {/* Made by Sid credit - moved to middle left */}
+      {/* <a
         href="https://www.linkedin.com/in/siddhartha-upase-a6963617a/"
         target="_blank"
         rel="noopener noreferrer"
         onClick={(e) => e.stopPropagation()}
-        className="absolute top-2 left-2 sm:top-4 sm:left-4 text-[#FFD700] text-sm sm:text-base 
+        className="absolute top-14 left-2 sm:top-16 sm:left-4 text-[#FFD700] text-sm sm:text-base 
           hover:text-white transition-colors duration-300 z-30 flex items-center gap-1"
       >
         Made by Sid <span className="text-red-200 animate-pulse">♥</span>
-      </a>
+      </a> */}
 
-      {/* Existing Create Card button */}
+      {/* Music Toggle Button - moved to top left */}
+      <button
+        onClick={toggleMusic}
+        className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#FFD700] text-[#B22222] 
+          px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base
+          font-semibold hover:bg-[#FFE55C] transition-colors duration-300 z-30"
+      >
+        {isMusicPlaying ? '🔇 Mute' : '🎵 Play'} Music
+      </button>
+
+      {/* Create Card button - kept at top right */}
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -124,9 +128,10 @@ export default function CardPage({ params }: { params: { id: string } }) {
         Create a Card
       </button>
 
+      {/* Audio Element */}
       <audio
         ref={audioRef}
-        src="/music/christmas-music.mp3"
+        src="/music/feliz_navidad.mp3"
         loop
         preload="auto"
       />
@@ -136,67 +141,96 @@ export default function CardPage({ params }: { params: { id: string } }) {
           className={`card ${isOpen ? 'open' : ''}`} 
           onClick={handleCardClick}
         >
-          {/* Front of Card - Made more responsive */}
+          {/* Front Cover - Updated with large profile picture */}
           <div className="card-front bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-8 border-4 border-[#FFD700]">
-            <div className="flex flex-col items-center justify-center h-full space-y-4 sm:space-y-8 bg-[#B22222]/95 rounded-xl relative">
-              {/* Adjusted star positions for mobile */}
+            <div className="flex flex-col items-center justify-center h-full space-y-4 sm:space-y-6 bg-[#B22222]/95 rounded-xl relative">
+              {/* Decorative stars */}
               <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
+                <span className="text-[#FFD700] text-3xl sm:text-5xl christmas-heading">✧</span>
               </div>
-              <div className="absolute top-1 right-4 sm:top-2 sm:right-8">
-                <span className="text-[#FFD700] text-xl sm:text-3xl">★</span>
-              </div>
-              <div className="absolute bottom-3 right-2 sm:bottom-6 sm:right-4">
-                <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
+              <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4">
+                <span className="text-[#FFD700] text-3xl sm:text-5xl christmas-heading">✧</span>
               </div>
 
-              <img 
-                src={cardData?.profilePicture} 
-                alt="Profile" 
-                className="w-16 h-16 sm:w-24 sm:h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
-              />
-              <div className="space-y-2 sm:space-y-4 text-center">
-                <h2 className="text-2xl sm:text-3xl christmas-heading text-[#FFD700]">
-                  Dear {cardData?.firstName}
+              {/* Large Profile Picture */}
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40">
+                <div className="rounded-full p-2 bg-[#FFD700] w-full h-full">
+                  <img 
+                    src={cardData?.profilePicture} 
+                    alt="Profile" 
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+                <div className="absolute -top-2 -right-2">
+                  <span className="text-2xl sm:text-3xl">🎄</span>
+                </div>
+              </div>
+
+              {/* Intriguing message */}
+              <div className="space-y-3 sm:space-y-4 text-center max-w-md">
+                <h2 className="text-xl sm:text-3xl christmas-heading text-[#FFD700] mb-1 sm:mb-2">
+                  Hey {cardData?.firstName}!
                 </h2>
-                <h1 className="text-3xl sm:text-4xl christmas-heading text-white tracking-wider">
-                  Special Message for You
+                <h1 className="text-2xl sm:text-4xl christmas-heading text-white tracking-wider leading-relaxed">
+                  A Christmas Wish
+                  <br />
+                  For You
                 </h1>
                 
-                <p className="text-sm sm:text-base text-white mt-2 sm:mt-4 tracking-wide regular-text animate-bounce">
-                  Click to open your special message! ✨
+                <p className="text-sm sm:text-base text-[#FFD700] mt-4 tracking-wide regular-text animate-bounce">
+                  Tap to unwrap your magical message! ✨
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Back of Card - Made more responsive */}
-          <div className="card-back bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-8 border-4 border-[#FFD700]">
+          {/* Back Cover - More compact layout */}
+          <div className="card-back bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-6 border-4 border-[#FFD700]">
             {cardData && (
-              <div className="flex flex-col items-center justify-center h-full space-y-3 sm:space-y-6 bg-[#B22222]/95 rounded-xl relative">
-                {/* Adjusted star positions for mobile */}
-                <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                  <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
+              <div className="flex flex-col h-full relative">
+                {/* Decorative stars - more compact positioning */}
+                <div className="absolute top-2 left-2">
+                  <span className="text-[#FFD700] text-2xl sm:text-3xl christmas-heading">✧</span>
                 </div>
-                <div className="absolute bottom-3 right-2 sm:bottom-6 sm:right-4">
-                  <span className="text-[#FFD700] text-2xl sm:text-4xl">★</span>
+                <div className="absolute bottom-2 right-2">
+                  <span className="text-[#FFD700] text-2xl sm:text-3xl christmas-heading">✧</span>
                 </div>
 
-                <img 
-                  src={cardData.profilePicture} 
-                  alt="Profile" 
-                  className="w-16 h-16 sm:w-24 sm:h-24 rounded-full ring-4 ring-[#FFD700] ring-offset-2 ring-offset-[#B22222] object-cover"
-                />
-                <div className="space-y-2 sm:space-y-4 text-center max-w-md">
-                  <h2 className="text-2xl sm:text-3xl christmas-heading text-[#FFD700]">
-                    Dear {cardData.firstName}
-                  </h2>
-                  <p className="wish-text text-base sm:text-3xl px-2 sm:px-0">
-                    {cardData.wish && cardData.wish.length > 0 ? cardData.wish : "Your friend just made a Christmas wish for you! 🎄"}
-                  </p>
-                  {/* <div className="pt-2 sm:pt-4 pb-2 text-[#FFD700] text-sm sm:text-4xl christmas-heading">
-                    ✨ Happy Holidays! ✨
-                  </div> */}
+                {/* Main content container - reduced spacing */}
+                <div className="flex flex-col items-center space-y-4 bg-[#B22222]/95 rounded-xl p-3 sm:p-4">
+                  {/* Profile picture - smaller size */}
+                  <div className="relative">
+                    <div className="rounded-full p-1.5 bg-[#FFD700]">
+                      <img 
+                        src={cardData.profilePicture} 
+                        alt="Profile" 
+                        className="w-20 h-20 sm:w-25 sm:h-25 rounded-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -top-1 -right-1">
+                      <span className="text-xl">🎄</span>
+                    </div>
+                  </div>
+
+                  {/* Message content - reduced spacing */}
+                  <div className="w-full space-y-3">
+                    {/* Dear Name */}
+                    <h2 className="text-lg sm:text-3xl christmas-heading text-[#FFD700] text-left">
+                      Dear {cardData.firstName},
+                    </h2>
+                    
+                    {/* Wish text - more compact container */}
+                    <div className=" rounded-lg p-2">
+                      <p className="wish-text text-white text-xl sm:text-3xl leading-relaxed">
+                        {cardData.wish}
+                      </p>
+                    </div>
+
+                    {/* Merry Christmas */}
+                    {/* <div className="text-[#FFD700] text-lg sm:text-3xl christmas-heading text-center pt-2">
+                      Merry Christmas! 🎄
+                    </div> */}
+                  </div>
                 </div>
               </div>
             )}

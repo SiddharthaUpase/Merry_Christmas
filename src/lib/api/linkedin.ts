@@ -1,8 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 // import lennyData from '../../../public/lenny_data.json'; // Commented out for future use
 
-const LINKEDIN_API_BASE = 'https://gateway.getapihub.cloud/api/v2';
-const API_HUB_KEY = process.env.API_HUB;
+const LINKEDIN_API_BASE = 'https://linkedin-api8.p.rapidapi.com';
+const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
@@ -27,10 +27,14 @@ interface LinkedInProfile {
   headline?: string;
   location?: string;
   summary?: string;
+  education?: string;
   profilePicture?: string;
 }
 
 async function generateWish(profile: LinkedInProfile) {
+
+
+
   try {
     const msg = await anthropic.messages.create({
       model: "claude-3-sonnet-20240229",
@@ -49,14 +53,18 @@ async function generateWish(profile: LinkedInProfile) {
             Example response: "May your code be bug-free and your commits be merry! Merry Christmas! 🎄"
             
             Rules:
-            - Start with their first name and make them feel special like "Dear ${profile.firstName}" or "Hey ${profile.firstName}"
+            -Do not start with "Dear" or "Hey" or their name as we are already using their name in the wish
             - Keep it to 50 words or less
+            - Make it hyper personalized, it should be a wish for them, not a generic one
+            -It should feel like a real person is writing it to them
             - Make it punny and festive
             - Include a playful reference to their job or location
             - Keep it warm and uplifting
             - Must end with "Merry Christmas! 🎄"
             - No introductions or explanations, just the wish`,
+
         }
+
       ],
       system: "You are a cheerful holiday wish creator. Return ONLY the wish text, without any introductions or explanations."
     });
@@ -77,41 +85,42 @@ export async function fetchLinkedInProfile(linkedInUrl: string) {
     console.log('=== Starting LinkedIn Profile Fetch ===');
     console.log('LinkedIn URL:', linkedInUrl);
     
-    // API Hub call
+    // Extract username from LinkedIn URL
+    const username = linkedInUrl.split('/in/')[1]?.replace(/\/$/, '');
+    if (!username) {
+      throw new Error('Invalid LinkedIn URL format');
+    }
+
+    // RapidAPI call
     const options = {
       method: 'GET',
       headers: {
-        'x-api-key': process.env.API_HUB || ''
+        'x-rapidapi-key': process.env.RAPIDAPI_KEY || '',
+        'x-rapidapi-host': 'linkedin-api8.p.rapidapi.com'
       }
     };
 
-    const encodedUrl = encodeURIComponent(linkedInUrl);
-    const response = await fetch(`${LINKEDIN_API_BASE}/profile?li_profile_url=${encodedUrl}`, options);
+    const response = await fetch(`${LINKEDIN_API_BASE}/?username=${username}`, options);
     const data = await response.json();
     
     console.log('API response:', data);
 
-    // Map API response to our interface
+    // Map API response to our interface with only real data
     const profileData: LinkedInProfile = {
-      firstName: data.first_name,
-      lastName: data.last_name,
-      headline: data.headline,
-      location: data.location?.full,
-      summary: data.summary,
-      profilePicture: data.picture
+      firstName: data.firstName || '',
+      lastName: data.lastName || '',
+      headline: data.headline || '',
+      location: data.geo?.full || '',
+      summary: data.summary || '',
+      education: data.educations?.[0]?.schoolName || '',
+      profilePicture: data.profilePicture || ''
     };
 
-    /* Commented out local data usage for future reference
-    const profileData: LinkedInProfile = {
-      firstName: lennyData.first_name,
-      lastName: lennyData.last_name,
-      headline: lennyData.headline,
-      location: lennyData.location.full,
-      summary: lennyData.summary,
-      profilePicture: lennyData.picture
-    };
-    */
-    
+    // Validate required fields
+    if (!profileData.firstName || !profileData.lastName) {
+      throw new Error('Profile name not found');
+    }
+
     console.log('Constructed profile data:', profileData);
     
     // Generate wish
