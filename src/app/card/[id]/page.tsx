@@ -155,11 +155,17 @@ export default function CardPage({ params }: { params: { id: string } }) {
               {/* Large Profile Picture */}
               <div className="relative w-32 h-32 sm:w-40 sm:h-40">
                 <div className="rounded-full p-2 bg-[#FFD700] w-full h-full">
-                  <img 
-                    src={cardData?.profilePicture} 
-                    alt="Profile" 
-                    className="w-full h-full rounded-full object-cover"
-                  />
+                  {cardData?.profilePicture ? (
+                    <img 
+                      src={cardData.profilePicture} 
+                      alt="Profile" 
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-[#B22222] flex items-center justify-center text-4xl sm:text-5xl">
+                      🎁
+                    </div>
+                  )}
                 </div>
                 <div className="absolute -top-2 -right-2">
                   <span className="text-2xl sm:text-3xl">🎄</span>
@@ -178,13 +184,13 @@ export default function CardPage({ params }: { params: { id: string } }) {
                 </h1>
                 
                 <p className="text-sm sm:text-base text-[#FFD700] mt-4 tracking-wide regular-text animate-bounce">
-                  Tap to unwrap your magical message! ✨
+                  Tap to unwrap your magical message! 
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Back Cover - More compact layout */}
+          {/* Back Cover - Updated text container */}
           <div className="card-back bg-[#B22222] backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-6 border-4 border-[#FFD700]">
             {cardData && (
               <div className="flex flex-col h-full relative">
@@ -197,39 +203,40 @@ export default function CardPage({ params }: { params: { id: string } }) {
                 </div>
 
                 {/* Main content container - reduced spacing */}
-                <div className="flex flex-col items-center space-y-4 bg-[#B22222]/95 rounded-xl p-3 sm:p-4">
+                <div className="flex flex-col items-center space-y-4 bg-[#B22222]/95 rounded-xl p-3 sm:p-1">
                   {/* Profile picture - smaller size */}
                   <div className="relative">
                     <div className="rounded-full p-1.5 bg-[#FFD700]">
-                      <img 
-                        src={cardData.profilePicture} 
-                        alt="Profile" 
-                        className="w-20 h-20 sm:w-25 sm:h-25 rounded-full object-cover"
-                      />
+                      {cardData?.profilePicture ? (
+                        <img 
+                          src={cardData.profilePicture} 
+                          alt="Profile" 
+                          className="w-20 h-20 sm:w-25 sm:h-25 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-20 h-20 sm:w-25 sm:h-25 rounded-full bg-[#B22222] flex items-center justify-center text-2xl sm:text-3xl">
+                          🎅
+                        </div>
+                      )}
                     </div>
                     <div className="absolute -top-1 -right-1">
                       <span className="text-xl">🎄</span>
                     </div>
                   </div>
 
-                  {/* Message content - reduced spacing */}
+                  {/* Message content - Fixed container */}
                   <div className="w-full space-y-3">
-                    {/* Dear Name */}
-                    <h2 className="text-lg sm:text-3xl christmas-heading text-[#FFD700] text-left">
+                    <h2 className="text-lg sm:text-2xl christmas-heading text-[#FFD700] text-left">
                       Dear {cardData.firstName},
                     </h2>
                     
-                    {/* Wish text - more compact container */}
-                    <div className=" rounded-lg p-2">
-                      <p className="wish-text text-white text-xl sm:text-3xl leading-relaxed">
+                    {/* Wish text - Updated container with proper wrapping */}
+                    <div className="rounded-lg">
+                      <p className="wish-text text-white text-base sm:text-3xl leading-relaxed 
+                        break-words whitespace-pre-wrap max-w-full overflow-hidden">
                         {cardData.wish}
                       </p>
                     </div>
-
-                    {/* Merry Christmas */}
-                    {/* <div className="text-[#FFD700] text-lg sm:text-3xl christmas-heading text-center pt-2">
-                      Merry Christmas! 🎄
-                    </div> */}
                   </div>
                 </div>
               </div>

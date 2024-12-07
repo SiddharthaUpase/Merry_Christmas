@@ -197,7 +197,7 @@ export default function CreatePage() {
         target="_blank"
         rel="noopener noreferrer"
         className="absolute top-4 left-4 sm:top-6 sm:left-6 text-[#FFD700] text-base sm:text-lg
-          hover:text-white transition-colors duration-300 flex items-center gap-2
+          hover:text-white transition-colors duration-300  flex items-center gap-2
           bg-[#B22222]/80 backdrop-blur-sm px-4 py-2 rounded-full border-2 border-[#FFD700]
           shadow-lg hover:scale-105 transform transition-all"
       >

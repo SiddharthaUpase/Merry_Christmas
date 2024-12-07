@@ -11,7 +11,7 @@ const VictimSchema = new mongoose.Schema({
   },
   profilePicture: {
     type: String,
-    required: true
+    required: false
   },
   wish: {
     type: String,
