@@ -230,7 +230,7 @@ export default function CreatePage() {
               placeholder="linkedin.com/in/username"
               helperText="Enter their LinkedIn URL for a personalized holiday wish"
               error={error || undefined}
-              className="border-[#B22222] focus:ring-[#FFD700] regular-text"
+              className="border-[#B22222] focus:ring-[#FFD700] regular-text text-gray-900"
             />
 
             <Button
@@ -386,3 +386,5 @@ export default function CreatePage() {
     
   );
 }
+
+
